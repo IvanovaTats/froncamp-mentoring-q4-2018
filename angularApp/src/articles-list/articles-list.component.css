@@ -1,0 +1,31 @@
+#Log {
+  display: flex;
+  justify-content: flex-end;
+}
+#login{
+  vertical-align: middle
+}
+
+#SourceName{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0rem;
+}
+
+#Buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+#Articles{
+  display: flex;
+  justify-content: center;
+}
+#Footer{
+  display: flex;
+  align-items : flex-end;
+  justify-content: space-between;
+  margin-bottom: 0rem;
+}
+
+
