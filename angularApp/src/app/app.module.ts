@@ -23,8 +23,8 @@ import { HttpClient } from 'selenium-webdriver/http';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'articles', component: ArticleListComponent },
-      { path: 'articles/add', component: ArticleDetailsComponent },
-      { path: 'articles/edit/:id', component: ArticleNewComponent },
+      { path: 'articles/add', component: ArticleNewComponent },
+      { path: 'articles/details/:id', component: ArticleDetailsComponent },
       { path: '', redirectTo: 'articles', pathMatch: 'full' }
     ])
   ],

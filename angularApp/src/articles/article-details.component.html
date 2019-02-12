@@ -1,8 +1,4 @@
 <div class='article-details'>
-  <div class="form-group row" id="Log">
-    <p id="login">User login</p>
-    <button type="submit" class="btn btn-outline-secondary">Log out</button>
-  </div>
   <div class="card text-center">
     <div class="card-header">
       <div class="form-group">
@@ -12,13 +8,10 @@
       </div>
     </div>
     <div class="card-body">
-      <form>
-      </form>
-      <button type="button" class="btn btn-lg btn-block btn-outline-secondary">Block level button</button>
-    </div>
-    <div class="card-footer text-muted for form-group row" id="Footer">
-      <p>Footer</p>
-      <p>Powered by NewsAPI</p>
+        <a [routerLink]="['/articles/add']">
+          <button type="button" class="btn btn-outline-secondary">Edit</button>
+        </a>
+        <button type="button" class="btn btn-outline-secondary">Delete</button>
     </div>
   </div>
 
