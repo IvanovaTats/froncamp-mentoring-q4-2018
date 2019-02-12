@@ -1,6 +1,6 @@
 <div class='article'>
-  <div class="form-group row" id="Log">
-    <p id="login">User login</p>
+  <div class="form-group" id="Log">
+    <p class="login-label">User login</p>
     <button type="submit" class="btn btn-outline-secondary">Log out</button>
   </div>
   <div class="card text-center">
@@ -20,7 +20,7 @@
             <option>ABC news</option>
             <option>Local news</option>
           </select>
-          <div class="form-group row">
+          <div class="form-group">
             <input type="text" placeholder="Type your text here..." aria-label="Recipient's username"
               aria-describedby="basic-addon2">
             <button type="button" class="btn btn-outline-secondary">Filter</button>
@@ -29,17 +29,38 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Only created by me</label>
           </div>
-          <button type="button" class="btn btn-outline-secondary">Add Article</button>
+          <a [routerLink]="['/articles/add']">
+            <button type="button" class="btn btn-outline-secondary">
+              Add Article
+            </button>
+          </a>
         </div>
       </form>
       <form>
-        <div class="ArticleList" id="Articles">
-          List of Articles
+        <div class="table-responsive" id="Articles">
+          <table class="table"
+                *ngIf = 'articles && articles.length'>
+            <thead>
+              <th>
+                Article
+              </th>
+              <th>
+                Article details
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor = 'let article of articles'>
+                <td></td>
+                <td>{{article.articleID}}</td>
+                <td>{{article.articleName}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </form>
       <button type="button" class="btn btn-lg btn-block btn-outline-secondary">Block level button</button>
     </div>
-    <div class="card-footer text-muted for form-group row" id="Footer">
+    <div class="card-footer text-muted for form-group" id="Footer">
       <p>Footer</p>
       <p>Powered by NewsAPI</p>
     </div>

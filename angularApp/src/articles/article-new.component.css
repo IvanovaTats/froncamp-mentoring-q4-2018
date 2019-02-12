@@ -1,0 +1,25 @@
+#Log {
+  display: flex;
+  justify-content: flex-end;
+}
+#login{
+  vertical-align: middle
+}
+
+#Edit{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0rem;
+}
+
+#Footer{
+  display: flex;
+  align-items : flex-end;
+  justify-content: space-between;
+  margin-bottom: 0rem;
+}
+
+.login-label{
+  margin: 0 15px 0 0;
+  padding: 15px 0;
+}

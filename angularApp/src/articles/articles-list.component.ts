@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./articles-list.component.css']
 })
 export class ArticleListComponent {
-
+  articles: any[] = [
+    { articleID: 1, articleName: 'BBC' },
+    { articleID: 2, articleName: 'ABC' }
+  ];
 }
+

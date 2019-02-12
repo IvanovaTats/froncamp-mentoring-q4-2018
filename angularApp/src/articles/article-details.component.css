@@ -2,8 +2,9 @@
   display: flex;
   justify-content: flex-end;
 }
-#login{
-  vertical-align: middle
+.login-label{
+  margin: 0 15px 0 0;
+  padding: 15px 0;
 }
 
 #SourceName{
@@ -12,15 +13,6 @@
   margin-bottom: 0rem;
 }
 
-#Buttons{
-  display: flex;
-  justify-content: space-around;
-}
-
-#Articles{
-  display: flex;
-  justify-content: center;
-}
 #Footer{
   display: flex;
   align-items : flex-end;
