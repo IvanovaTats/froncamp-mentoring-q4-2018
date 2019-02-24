@@ -1,0 +1,18 @@
+.article{
+  padding: 0 15px;
+}
+
+select{
+  padding: 7px 3px;
+}
+#Filters{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+input[type=text]{
+  padding: 6px 3px;
+  margin-right: 10px;
+  vertical-align: top;
+}

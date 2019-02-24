@@ -1,0 +1,29 @@
+<div class='article'>
+  <div class="card text-center">
+    <div class="card-header">
+      <div class="form-group">
+        <div class="container">
+          <!-- Title should be updated based on the selected source-->
+          <h2 class="display-4" id="SourceName">{{sourceName}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group" id="Buttons">
+          <app-articles-filters> </app-articles-filters>
+          <a [routerLink]="['/articles/add']">
+            <button type="button" class="btn btn-outline-secondary">
+              Add Article
+            </button>
+          </a>
+        </div>
+      </form>
+      <form>
+        <app-article></app-article>
+      </form>
+      <!-- Extract button and add @Output event -->
+      <button type="button" class="btn btn-lg btn-block btn-outline-secondary">Load more</button>
+    </div>
+  </div>
+</div>

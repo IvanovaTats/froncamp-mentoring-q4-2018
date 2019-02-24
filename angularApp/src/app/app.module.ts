@@ -5,28 +5,27 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ArticleListComponent } from 'src/articles/articles-list.component';
-import { ArticleDetailsComponent } from 'src/articles/article-details.component';
-import { ArticleNewComponent } from 'src/articles/article-new.component';
+import { ArticleListComponent } from 'src/articles/article-list/articles-list.component';
+import { ArticleDetailsComponent } from 'src/articles/article-details/article-details.component';
+import { ArticleNewComponent } from 'src/articles/article-new/article-new.component';
+import { ArticleListFilterComponent } from 'src/articles/article-list-filter/articles-list-filter.component';
 import { HttpClient } from 'selenium-webdriver/http';
+import { ArticleComponent } from 'src/articles/article/article.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
     ArticleDetailsComponent,
-    ArticleNewComponent
+    ArticleNewComponent,
+    ArticleListFilterComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'articles', component: ArticleListComponent },
-      { path: 'articles/add', component: ArticleNewComponent },
-      { path: 'articles/details/:id', component: ArticleDetailsComponent },
-      { path: '', redirectTo: 'articles', pathMatch: 'full' }
-    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

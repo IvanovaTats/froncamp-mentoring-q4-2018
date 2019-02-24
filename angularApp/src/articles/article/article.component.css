@@ -1,0 +1,12 @@
+#Articles{
+  display: flex;
+  justify-content: center;
+}
+
+.article{
+  padding: 0 15px;
+}
+
+.image{
+  width: 100px;
+}

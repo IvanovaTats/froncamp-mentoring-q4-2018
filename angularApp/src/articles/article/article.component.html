@@ -1,0 +1,19 @@
+<div class="table-responsive" id="Articles">
+  <table class="table">
+    <thead>
+      <th></th>
+      <th>Article</th>
+      <th>Author</th>
+      <th>Description</th>
+    </thead>
+    <tbody *ngIf='articles && articles.length'>
+      <!-- Use seperate component with @Input prop -->
+      <tr *ngFor='let article of articles'>
+        <td><img class="image" src = {{article.urlToImage}}></td>
+        <td>{{article.title}}</td>
+        <td>{{article.author}}</td>
+        <td>{{article.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
