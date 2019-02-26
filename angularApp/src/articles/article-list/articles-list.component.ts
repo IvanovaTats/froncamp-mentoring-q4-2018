@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { pub } from '../../server/publishers';
+import { SourceNameService } from 'src/app/source-name.service';
 
 @Component({
   selector: 'app-articles',
@@ -7,11 +7,13 @@ import { pub } from '../../server/publishers';
   styleUrls: ['./articles-list.component.css']
 })
 export class ArticleListComponent {
-  sourceName: string;
+  publisherName: string = 'Source name';
 
-  updateName(sourceName: string): void {
-    console.log(sourceName);
-    this.sourceName = sourceName;
+  constructor(public sourceName: SourceNameService) {
+  }
+
+  ngOnInit() {
+    console.log('in onInit');
+    this.publisherName = this.sourceName.getSourceName();
   }
 }
-

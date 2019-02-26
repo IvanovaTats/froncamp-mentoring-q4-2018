@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PublisherService } from './publisher.service';
+import { SourceNameService } from 'src/app/source-name.service';
 
 @Component({
   selector: 'app-articles-filters',
@@ -10,20 +11,21 @@ import { PublisherService } from './publisher.service';
 export class ArticleListFilterComponent implements OnInit {
   searchText: string = 'Microsoft';
 
-  // tslint:disable-next-line:no-output-on-prefix
-  @Output() onSourceNameSelected = new EventEmitter();
+  publisher: string = 'Source Name';
 
-  constructor( private publisherService: PublisherService){
-
+  constructor(private publisherService: PublisherService,
+    public sourceName: SourceNameService) {
   }
 
   publishers: any[] = [];
 
-  clicked(name: string): void {
-    this.onSourceNameSelected.emit(name);
+  sourceChange() {
+    // var x = document.getElementById("mySelect").value;
+    this.sourceName.setSourceName(this.publisher);
+    console.log('inSourceChange');
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.publishers = this.publisherService.getPublishers();
   }
 }
