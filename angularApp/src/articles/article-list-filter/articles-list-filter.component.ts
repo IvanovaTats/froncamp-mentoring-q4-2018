@@ -17,7 +17,7 @@ export class ArticleListFilterComponent implements OnInit {
     public sourceName: SourceNameService) {
   }
 
-  publishers: any[] = [];
+  publishers: any[];
 
   sourceChange() {
     // var x = document.getElementById("mySelect").value;
@@ -26,7 +26,9 @@ export class ArticleListFilterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.publishers = this.publisherService.getPublishers();
+    this.publisherService.getPublishers().subscribe(
+      data => this.publishers = data['sources']
+    );
   }
 }
 

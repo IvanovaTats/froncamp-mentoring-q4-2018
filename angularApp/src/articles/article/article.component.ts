@@ -18,7 +18,7 @@ export class ArticleComponent implements OnInit {
   articles: any[] = [];
 
     ngOnInit() {
-      this.articles = this.articleService.getArticles();
+      //this.articles = this.articleService.getArticles();
 }
 
 }

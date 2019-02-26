@@ -14,6 +14,6 @@ export class ArticleListComponent {
 
   ngOnInit() {
     console.log('in onInit');
-    this.publisherName = this.sourceName.getSourceName();
+
   }
 }

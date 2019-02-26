@@ -1,6 +1,6 @@
 <!-- Filters -->
 <div class="form-group" id="Filters">
-  <select class="col-3" id="sel1" onchange="sourceChange()">
+  <select onchange="sourceChange()" class="col-3" id="sel1" >
     <option *ngFor="let publisher of publishers">{{publisher.name| uppercase}}</option>
   </select>
   <div class="form-group">

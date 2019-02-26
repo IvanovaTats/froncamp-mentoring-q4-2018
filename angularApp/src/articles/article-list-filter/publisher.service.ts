@@ -1,29 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { SourceInformation } from './sourceInfo.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PublisherService {
-  getPublishers(): any[] {
-    return [
-      {
-        "id": "abc-news",
-        "name": "ABC News",
-        "description": "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.",
-        "url": "https://abcnews.go.com",
-        "category": "general",
-        "language": "en",
-        "country": "us"
-      },
-      {
-        "id": "abc-news-au",
-        "name": "ABC News (AU)",
-        "description": "Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.",
-        "url": "http://www.abc.net.au/news",
-        "category": "general",
-        "language": "en",
-        "country": "au"
-      }
-    ];
+
+  apiKey = '5fb7dea8d7f440b1af9b7cd7cba9640d';
+  private url = 'https://newsapi.org/v2/sources?language=en&apiKey=' + this.apiKey;
+
+  constructor(private http: HttpClient) { }
+  getPublishers(): Observable<SourceInformation> {
+    return this.http.get<SourceInformation>(this.url);
   }
 }

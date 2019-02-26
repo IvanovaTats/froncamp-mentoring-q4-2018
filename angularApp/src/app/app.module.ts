@@ -10,7 +10,6 @@ import { ArticleListComponent } from 'src/articles/article-list/articles-list.co
 import { ArticleDetailsComponent } from 'src/articles/article-details/article-details.component';
 import { ArticleNewComponent } from 'src/articles/article-new/article-new.component';
 import { ArticleListFilterComponent } from 'src/articles/article-list-filter/articles-list-filter.component';
-import { HttpClient } from 'selenium-webdriver/http';
 import { ArticleComponent } from 'src/articles/article/article.component';
 import { NgxPopper } from 'angular-popper';
 import { FilterArticle } from '../articles/shared/article-filter';
