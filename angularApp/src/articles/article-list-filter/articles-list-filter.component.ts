@@ -1,30 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { PublisherService } from './publisher.service';
 
 @Component({
   selector: 'app-articles-filters',
   templateUrl: './articles-list-filter.component.html',
   styleUrls: ['./articles-list-filter.component.css']
 })
-export class ArticleListFilterComponent {
-  publishers: any[] = [
-    {
-      "id": "abc-news",
-      "name": "ABC News",
-      "description": "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.",
-      "url": "https://abcnews.go.com",
-      "category": "general",
-      "language": "en",
-      "country": "us"
-    },
-    {
-      "id": "abc-news-au",
-      "name": "ABC News (AU)",
-      "description": "Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.",
-      "url": "http://www.abc.net.au/news",
-      "category": "general",
-      "language": "en",
-      "country": "au"
-    }
-  ];
+
+export class ArticleListFilterComponent implements OnInit {
+  searchText: string = 'Microsoft';
+
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onSourceNameSelected = new EventEmitter();
+
+  constructor( private publisherService: PublisherService){
+
+  }
+
+  publishers: any[] = [];
+
+  clicked(name: string): void {
+    this.onSourceNameSelected.emit(name);
+  }
+
+  ngOnInit(){
+    this.publishers = this.publisherService.getPublishers();
+  }
 }
 

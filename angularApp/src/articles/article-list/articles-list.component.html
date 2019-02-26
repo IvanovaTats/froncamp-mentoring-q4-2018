@@ -4,14 +4,14 @@
       <div class="form-group">
         <div class="container">
           <!-- Title should be updated based on the selected source-->
-          <h2 class="display-4" id="SourceName">{{sourceName}}</h2>
+          <h2 class="display-4" id="SourceName">{{sourceName| uppercase}}</h2>
         </div>
       </div>
     </div>
     <div class="card-body">
       <form>
         <div class="form-group" id="Buttons">
-          <app-articles-filters> </app-articles-filters>
+          <app-articles-filters (clicked)= 'updateName($event)'> </app-articles-filters>
           <a [routerLink]="['/articles/add']">
             <button type="button" class="btn btn-outline-secondary">
               Add Article

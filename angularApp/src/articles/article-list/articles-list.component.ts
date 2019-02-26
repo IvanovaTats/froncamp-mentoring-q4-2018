@@ -6,12 +6,12 @@ import { pub } from '../../server/publishers';
   templateUrl: './articles-list.component.html',
   styleUrls: ['./articles-list.component.css']
 })
-export class ArticleListComponent{//} implements OnInit {
-  sourceName: string = 'Publisher name';
+export class ArticleListComponent {
+  sourceName: string;
 
-  // public publisherList: any[] = pub();
-  // public ngOnInit(): void {
-  //   pub();
-  // }
+  updateName(sourceName: string): void {
+    console.log(sourceName);
+    this.sourceName = sourceName;
+  }
 }
 
